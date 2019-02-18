@@ -1,0 +1,73 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.1
+-- Dumped by pg_dump version 11.1
+
+-- Started on 2019-02-17 19:12:01
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 200 (class 1259 OID 24596)
+-- Name: Recipes; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."Recipes" (
+    "ID_Num*" smallint NOT NULL,
+    "Genre_ID" smallint,
+    "TimeToCook" smallint,
+    "Instructions" text NOT NULL,
+    "Name" character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public."Recipes" OWNER TO postgres;
+
+--
+-- TOC entry 2824 (class 0 OID 24596)
+-- Dependencies: 200
+-- Data for Name: Recipes; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public."Recipes" ("ID_Num*", "Genre_ID", "TimeToCook", "Instructions", "Name") FROM stdin;
+\.
+
+
+--
+-- TOC entry 2701 (class 2606 OID 24603)
+-- Name: Recipes Recipes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Recipes"
+    ADD CONSTRAINT "Recipes_pkey" PRIMARY KEY ("ID_Num*");
+
+
+--
+-- TOC entry 2702 (class 2606 OID 24604)
+-- Name: Recipes Genre_ID; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Recipes"
+    ADD CONSTRAINT "Genre_ID" FOREIGN KEY ("Genre_ID") REFERENCES public."Genre"("Genre_ID");
+
+
+-- Completed on 2019-02-17 19:12:01
+
+--
+-- PostgreSQL database dump complete
+--
+
