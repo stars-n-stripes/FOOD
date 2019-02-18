@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>F.O.O.D.</title>
 </head>
 <body>
+<h1>Welcome to F.O.O.D.!</h1>
+
+<form action="food.php" method="post">
+    <label for="search_type">
+        What kind of dinner is this?<br>
+        <select name="search_type">
+            <option value="restaurant">Eat-out</option>
+            <option value="home">Eat-in</option>
+            <option value="both">Either</option>
+        </select>
+    </label>
+    <br>
+    <label for="genre">
+        Is there a specific genre of food being considered?<br>
+        <select>
+            <option value="all">All</option>
+        </select>
+    </label>
+
+</form>
 
 </body>
 </html>
